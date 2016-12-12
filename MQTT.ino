@@ -43,10 +43,10 @@ void callback(char* topic, byte* payload, unsigned int length) {
       ledChannelOneState = true;
     }    
     ledChannelOne = value.toInt();
-    leds();
     #ifdef DEBUG
     Serial.println();
     #endif
+	leds();
   }
   if(strcmp(topic, "test/ledChannel2") == 0) {
     #ifdef DEBUG
@@ -65,10 +65,10 @@ void callback(char* topic, byte* payload, unsigned int length) {
       ledChannelTwoState = true;
     }      
     ledChannelTwo = value.toInt(); 
-    leds();
     #ifdef DEBUG
     Serial.println();
-    #endif    
+    #endif 
+	leds();   
   }    
 
   if(strcmp(topic, "test/ledChannel3") == 0) {
@@ -88,10 +88,10 @@ void callback(char* topic, byte* payload, unsigned int length) {
       ledChannelThreeState = true;
     }    
     ledChannelThree = value.toInt();
-    leds(); 
     #ifdef DEBUG
     Serial.println();
-    #endif  
+    #endif 
+	leds(); 
   }
 
   if(strcmp(topic, "test/ledChannel4") == 0) {
@@ -111,10 +111,10 @@ void callback(char* topic, byte* payload, unsigned int length) {
       ledChannelFourState = true;
     }    
     ledChannelFour = value.toInt();
-    leds();
     #ifdef DEBUG
     Serial.println();
-    #endif    
+    #endif  
+	leds();  
   }  
   if(strcmp(topic, "test/outlet1") == 0) {
     #ifdef DEBUG
@@ -130,10 +130,10 @@ void callback(char* topic, byte* payload, unsigned int length) {
       value += (char)payload[i]; 
     }
     outlet1 = value.toInt();
-    outletPort1(); 
     #ifdef DEBUG
     Serial.println();
     #endif
+	outletPort1(); 
   }
 
   if(strcmp(topic, "test/outlet2") == 0) {
@@ -150,10 +150,10 @@ void callback(char* topic, byte* payload, unsigned int length) {
       value += (char)payload[i]; 
     }
     outlet2 = value.toInt();
-    outletPort2();
     #ifdef DEBUG 
     Serial.println();
     #endif
+	outletPort2();
   }  
 }
 
