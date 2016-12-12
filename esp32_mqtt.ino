@@ -3,6 +3,8 @@
 #include <WiFi.h>
 #include <PubSubClient.h>
 
+#define DEBUG
+
 //// WiFi Configuration
 char myhostname[] = "#########";
 const char* ssid = "#########;
@@ -35,6 +37,11 @@ boolean ledChannelFourState = false;
 
 void setup() {
   // put your setup code here, to run once:
+  #ifdef DEBUG
+  Serial.begin(115200);
+  while (!Serial){
+  }
+  #endif 	
   outletSetup();
   ledSetup();
   beginNetwork();
@@ -46,5 +53,5 @@ void setup() {
 void loop() {
   mqttCheckConnection();
   client.loop();
-//  mqttPublish();
+  mqttPublish();
 }

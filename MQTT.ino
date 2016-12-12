@@ -181,7 +181,7 @@ Currently the library is throwing an error. Will return
 back to it, once I have everything else working correctly
 */
 
-/*
+
 const int bufferLen = 256;
 char jsonMessage[bufferLen];
 
@@ -193,11 +193,11 @@ void mqttPublish() {
       int length;
       DynamicJsonBuffer  jsonBuffer;
       //StaticJsonBuffer<200> jsonBuffer;
-      //JsonObject& root = jsonBuffer.createObject();
+      JsonObject& root = jsonBuffer.createObject();
   
-    // jsonData(root);
+	  jsonData(root);
   
-      //length = root.printTo(jsonMessage, bufferLen);
+      length = root.printTo(jsonMessage, bufferLen);
     client.publish(jsonTopic, jsonMessage, true);  
    }
 }
@@ -211,4 +211,4 @@ void jsonData(JsonObject& root) {
   root["outlet1"] = outlet1;
   root["outlet2"] = outlet2; 
 }
-*/
+
