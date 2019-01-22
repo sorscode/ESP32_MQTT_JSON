@@ -7,7 +7,7 @@
 
 //// WiFi Configuration
 char myhostname[] = "#########";
-const char* ssid = "#########;
+const char* ssid = "#########";
 const char* password = "#########";
 WiFiClient espClient;
 
